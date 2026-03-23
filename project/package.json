@@ -1,0 +1,13 @@
+{
+  "name": "ai-product-reviewer",
+  "version": "1.0.0",
+  "description": "AI-powered product review analyzer using Docker Model Runner",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "openai": "^6.32.0"
+  }
+}

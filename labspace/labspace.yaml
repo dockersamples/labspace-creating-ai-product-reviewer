@@ -1,25 +1,23 @@
 metadata:
-  id: dockersamples/labspace-creating-ai-product-reviewer
+  id: creating-ai-product-reviewer
   sourceRepo: github.com/dockersamples/labspace-creating-ai-product-reviewer
-  contentVersion: abcd123 # Will be filled in during CI
+  contentVersion: 1.0.0
 
-title: Labspace starter
-description: |
-  A basic template for creating a Labspace, including all of the boilerplate needed to write and publish a Labspace.
+title: Building an AI Product Reviewer with Docker Model Runner
+description: Build a complete AI-powered feedback analysis pipeline — sentiment analysis, semantic clustering with embeddings, and response generation — all running locally via Docker Model Runner. No API keys required.
 
 sections:
   - title: Introduction
     contentPath: 01-introduction.md
-  - title: Main Content 1
-    contentPath: 02-main-content.md
-  - title: Conclusion
-    contentPath: 03-conclusion.md
-
-# Services are used to add default tabs in the Labspace interface.
-# The IDE will always be present as a service, but you can add additional services as needed.
-# Icon values come from https://fonts.google.com/icons/
-services:
-  - id: app
-    url: http://localhost:3000
-    title: App
-    icon: anchor
+  - title: Project Setup & Docker Model Runner
+    contentPath: 02-project-setup.md
+  - title: Generating Synthetic Feedback
+    contentPath: 03-generating-comments.md
+  - title: Sentiment Analysis
+    contentPath: 04-sentiment-analysis.md
+  - title: Embeddings & Semantic Clustering
+    contentPath: 05-embeddings-and-clustering.md
+  - title: Features & Responses
+    contentPath: 06-features-and-responses.md
+  - title: Wrap-up
+    contentPath: 07-wrap-up.md
