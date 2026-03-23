@@ -1,6 +1,6 @@
 metadata:
-  id: ${REPO_OWNER}/${REPO_NAME}
-  sourceRepo: github.com/${REPO_OWNER}/${REPO_NAME}
+  id: dockersamples/labspace-creating-ai-product-reviewer
+  sourceRepo: github.com/dockersamples/labspace-creating-ai-product-reviewer
   contentVersion: abcd123 # Will be filled in during CI
 
 title: Labspace starter
