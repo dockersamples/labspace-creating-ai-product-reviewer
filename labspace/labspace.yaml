@@ -1,5 +1,5 @@
 metadata:
-  id: creating-ai-product-reviewer
+  id: dockersamples/creating-ai-product-reviewer
   sourceRepo: github.com/dockersamples/labspace-creating-ai-product-reviewer
   contentVersion: 1.0.0
 
