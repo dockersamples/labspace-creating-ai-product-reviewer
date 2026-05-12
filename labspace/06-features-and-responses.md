@@ -68,8 +68,12 @@ async function extractFeaturesFromCluster(clusterComments, clusterName) {
   });
 
   try {
-    const parsed = JSON.parse(response.choices[0].message.content);
-    return Array.isArray(parsed.features) ? parsed.features : [];
+    const parsed = JSON.parse(response.choices[0].message.content.replace(/```json/g, '').replace(/```/g, ''));
+    if (Array.isArray(parsed))
+        return parsed;
+    if (typeof parsed === 'object' && Array.isArray(parsed.features))
+      return parsed.features
+    return [];
   } catch {
     return [];
   }

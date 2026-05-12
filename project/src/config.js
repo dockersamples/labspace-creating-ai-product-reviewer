@@ -30,7 +30,7 @@ const config = {
   processor: {
     clustering: {
       // Two comments with cosine similarity >= this threshold will be placed in the same cluster.
-      similarityThreshold: 0.75,
+      similarityThreshold: 0.65,
     },
   },
   paths: {

@@ -114,6 +114,8 @@ Build the image and run the starter `index.js` to confirm the environment variab
     OPENAI_BASE_URL  : http://model-runner.docker.internal/engines/v1
     LLM_MODEL        : $$llmModel$$
     EMBEDDINGS_MODEL : ai/mxbai-embed-large
+
+    Everything looks good! Ready to start building.
     ```
 
 > [!IMPORTANT]

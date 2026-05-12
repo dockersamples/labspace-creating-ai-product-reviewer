@@ -28,7 +28,7 @@ To measure how close two vectors are, you use **cosine similarity**. It computes
 - **Score of 0.0** — vectors are perpendicular → unrelated topics
 - **Score near -1.0** — opposite meaning
 
-The `cosineSimilarity` function in :fileLink[`src/utils.js`]{path="src/utils.js" line=13} implements this. Your clustering algorithm will use a threshold of `0.75` — comments with similarity above that get grouped together.
+The `cosineSimilarity` function in :fileLink[`src/utils.js`]{path="src/utils.js" line=13} implements this. Your clustering algorithm will use a threshold of `0.65` — comments with similarity above that get grouped together.
 
 ## Create the clusterer
 
@@ -213,25 +213,25 @@ Rebuild the image and run the app:
     docker compose run --rm app
     ```
 
-You should see output like:
+    You should see output similar to the following:
 
-```plaintext no-copy-button
-Step 2: Clustering with embeddings...
-  Generating embeddings...  Done!
-  Clustering by semantic similarity...
-  Naming clusters...
-  Found 4 cluster(s):
-    Cluster 1: "Ease of Use and Accuracy" — 11 comment(s)
-    Cluster 2: "Crashing and Performance Issues" — 5 comment(s)
-    Cluster 3: "Pricing and Value" — 3 comment(s)
-    Cluster 4: "Documentation Quality" — 1 comment(s)
-```
+    ```plaintext no-copy-button
+    Step 2: Clustering with embeddings...
+      Generating embeddings...  Done!
+      Clustering by semantic similarity...
+      Naming clusters...
+      Found 4 cluster(s):
+        Cluster 1: "Ease of Use and Accuracy" — 11 comment(s)
+        Cluster 2: "Crashing and Performance Issues" — 5 comment(s)
+        Cluster 3: "Pricing and Value" — 3 comment(s)
+        Cluster 4: "Documentation Quality" — 1 comment(s)
+    ```
 
 The cluster names and sizes will vary based on the comments that were generated. That's normal — the LLM reads the actual text and derives the theme dynamically.
 
 Open :fileLink[data/results.json]{path="data/results.json"} and look at the `metadata.clusters.names` section. Each comment in the `comments` array now has a `clusterId` field showing which group it belongs to.
 
 > [!TIP]
-> Try adjusting `similarityThreshold` in `src/config.js`. Lowering it (e.g., to `0.65`) will create fewer, broader clusters. Raising it (e.g., to `0.85`) will create more, narrower ones. Save the file and watch the pipeline re-run automatically.
+> Try adjusting `similarityThreshold` in `src/config.js`. Lowering it (e.g., to `0.55`) will create fewer, broader clusters. Raising it (e.g., to `0.75`) will create more, narrower ones. Save the file and watch the pipeline re-run automatically.
 
 You've just implemented semantic clustering using vector embeddings — a technique used in production recommendation systems, search engines, and knowledge bases. In the final section, you'll use the clusters to extract actionable features and generate responses to each review.
